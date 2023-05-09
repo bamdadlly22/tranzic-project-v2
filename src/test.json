@@ -1,0 +1,233 @@
+[
+    {
+      "StepNo": 1,
+      "Title": "تاریخ",
+      "IconClassName": "",
+      "IsNeedsValidation": false,
+      "StepPreviewType": 0,
+      "Description": "",
+      "Inputs": [
+        {
+          "Id": "307.12044",
+          "ClassType": "307",
+          "Type": 1,
+          "Label": "مدت اعتبار بیمه نامه درخواستی",
+          "Tooltip": "",
+          "MultiSelect": false,
+          "IsRequired": true,
+          "IsVisibility": true,
+          "MaxValue": null,
+          "MinValue": null,
+          "MaxLength": null,
+          "MinLength": null,
+          "FullWidth": false,
+          "DefaultValue": "",
+          "ReadOnly": false,
+          "WebServiceInquiryId": null,
+          "RegEx": null,
+          "Options": [
+            {
+              "Key": 2,
+              "Value": "یکساله",
+              "IconClassName": null,
+              "AlertText": "",
+              "DisplayCondition": null
+            }
+          ],
+          "OptionsDependency": [],
+          "DispalyDependency": []
+        }
+      ]
+    },
+    {
+      "StepNo": 2,
+      "Title": "اطلاعات وسیله نقلیه",
+      "IconClassName": "",
+      "IsNeedsValidation": false,
+      "StepPreviewType": 0,
+      "Description": "",
+      "Inputs": [
+        {
+          "Id": "307.12082",
+          "ClassType": "307",
+          "Type": 1,
+          "Label": "نوع خودرو داخلی و خارجی ",
+          "Tooltip": "",
+          "MultiSelect": false,
+          "IsRequired": false,
+          "IsVisibility": true,
+          "MaxValue": null,
+          "MinValue": null,
+          "MaxLength": null,
+          "MinLength": null,
+          "FullWidth": false,
+          "DefaultValue": "",
+          "ReadOnly": false,
+          "WebServiceInquiryId": null,
+          "RegEx": null,
+          "Options": [
+            {
+              "Key": 1,
+              "Value": "تولید داخل ",
+              "IconClassName": null,
+              "AlertText": "",
+              "DisplayCondition": null
+            },
+            {
+              "Key": 2,
+              "Value": "خودرو وارداتی ",
+              "IconClassName": null,
+              "AlertText": "",
+              "DisplayCondition": null
+            }
+          ],
+          "OptionsDependency": [
+            {
+              "InputId": "307.12083",
+              "InputLabel": "سال ساخت ",
+              "ParentInputs": [
+                {
+                  "InputId": "307.12082",
+                  "InputLabel": "نوع خودرو داخلی و خارجی "
+                }
+              ]
+            }
+          ],
+          "DispalyDependency": []
+        },
+        {
+          "Id": "307.12083",
+          "ClassType": "307",
+          "Type": 1,
+          "Label": "سال ساخت ",
+          "Tooltip": "",
+          "MultiSelect": false,
+          "IsRequired": true,
+          "IsVisibility": true,
+          "MaxValue": null,
+          "MinValue": null,
+          "MaxLength": null,
+          "MinLength": null,
+          "FullWidth": false,
+          "DefaultValue": "",
+          "ReadOnly": false,
+          "WebServiceInquiryId": null,
+          "RegEx": null,
+          "Options": [],
+          "OptionsDependency": [],
+          "DispalyDependency": []
+        },
+        {
+          "Id": "307.12197",
+          "ClassType": "307",
+          "Type": 1,
+          "Label": "آیا خودرو دارای یدک می باشد",
+          "Tooltip": "",
+          "MultiSelect": false,
+          "IsRequired": true,
+          "IsVisibility": true,
+          "MaxValue": null,
+          "MinValue": null,
+          "MaxLength": null,
+          "MinLength": null,
+          "FullWidth": false,
+          "DefaultValue": "",
+          "ReadOnly": false,
+          "WebServiceInquiryId": null,
+          "RegEx": null,
+          "Options": [
+            {
+              "Key": 1,
+              "Value": "خیر",
+              "IconClassName": null,
+              "AlertText": "",
+              "DisplayCondition": null
+            },
+            {
+              "Key": 2,
+              "Value": "بله",
+              "IconClassName": null,
+              "AlertText": "در صورت انتخاب این گزینه، بازاء هر یدکی  15 درصد به حق بیمه پایه ثالث  اضافه نرخ اعمال خواهد شد ",
+              "DisplayCondition": [
+                {
+                  "InputId": "307.12516",
+                  "InputLabel": "تعداد یدک "
+                }
+              ]
+            }
+          ],
+          "OptionsDependency": [],
+          "DispalyDependency": [
+            {
+              "InputId": "307.12516",
+              "InputLabel": "تعداد یدک ",
+              "ParentInputs": [
+                {
+                  "InputId": "307.12197",
+                  "InputLabel": "آیا خودرو دارای یدک می باشد"
+                }
+              ]
+            }
+          ]
+        },
+        {
+            "Id": "307.12516",
+            "ClassType": "307",
+            "Type": 1,
+            "Label": "تعداد یدک ",
+            "Tooltip": "",
+            "MultiSelect": false,
+            "IsRequired": true,
+            "IsVisibility": false,
+            "MaxValue": null,
+            "MinValue": null,
+            "MaxLength": null,
+            "MinLength": null,
+            "FullWidth": false,
+            "DefaultValue": "",
+            "ReadOnly": false,
+            "WebServiceInquiryId": null,
+            "RegEx": null,
+            "Options": [
+              {
+                "Key": 1,
+                "Value": "1",
+                "IconClassName": null,
+                "AlertText": "",
+                "DisplayCondition": null
+              },
+              {
+                "Key": 2,
+                "Value": "2",
+                "IconClassName": null,
+                "AlertText": "",
+                "DisplayCondition": null
+              },
+              {
+                "Key": 3,
+                "Value": "3",
+                "IconClassName": null,
+                "AlertText": "",
+                "DisplayCondition": null
+              },
+              {
+                "Key": 4,
+                "Value": "4",
+                "IconClassName": null,
+                "AlertText": "",
+                "DisplayCondition": null
+              },
+              {
+                "Key": 5,
+                "Value": "5",
+                "IconClassName": null,
+                "AlertText": "",
+                "DisplayCondition": null
+              }
+            ],
+            "OptionsDependency": [],
+            "DispalyDependency": []
+          }
+      ]
+    }
+  ]

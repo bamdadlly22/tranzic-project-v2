@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    /* :root{
+        --primary-color: #ea5551
+    } */
+    body {
+        font-family: 'Poppins'
+    }
+    h1, h2, h3 {
+        @apply text-black;
+    }
+}
+
+@layer components {
+    .btn {
+        @apply py-3 px-8;
+    }
+
+    .btn-primary {
+        @apply bg-primary text-white;
+    }
+
+    .btn-primary:hover {
+        @apply bg-[#ea5551d1]
+    }
+    .selectbox {
+        padding: 15px;
+        border: solid 1px #eeebeb;
+    }
+}
+
+
+.team {
+    background-image: url('../public/img/12151159_4880206.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.member1 {
+    height: 500px;
+    background-image: url('../public/img/person1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.member2 {
+    height: 500px;
+    background-image: url('../public/img/person2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.member3 {
+    height: 500px;
+    background-image: url('../public/img/person3.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.icons i {
+    font-size: 24px;
+    color: #a28581;
+    /* padding-left: 20px; */
+    padding-top: 5px;
+}
