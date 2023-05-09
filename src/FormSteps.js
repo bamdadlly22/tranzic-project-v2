@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Step from './components/forms/Step';
-import Step2 from './components/forms/Step2';
 import stepsInfo from './test.json'
 
 const FormSteps = () => {
