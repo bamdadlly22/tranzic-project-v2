@@ -4,22 +4,21 @@ import { useState } from "react";
 const Step = ({stepInfo, setStep}) => {
     const [selectboxValue, setSelectboxValue] = useState('');
     const [yadak, setYadak] = useState(1);
+    const [Visibility, setVisibility] = useState(false);
     const [year, setYear] = useState([]);
 
-
-    const handleSelect = async (value, id) => {
-        if(id === "307.12197") {
-            setYadak(value)
+    const handleSelect = async (value, OptionsDependency, DispalyDependency) => {
+        if(DispalyDependency.length !== 0) {
+            setYadak(value);
         };
-        if(id === "307.12082") {
-            const jsonInfo = stepInfo.Inputs[0].OptionsDependency[0];
+        if(OptionsDependency.length !== 0) {
             const values = {
-                ChildId: jsonInfo.InputId,
-                ChildLabel: jsonInfo.InputLabel,
+                ChildId: OptionsDependency[0].InputId,
+                ChildLabel: OptionsDependency[0].InputLabel,
                 Parents: [
                     {
-                        ParentId: jsonInfo.ParentInputs[0].InputId,
-                        ParentLabel: jsonInfo.ParentInputs[0].InputLabel,
+                        ParentId: OptionsDependency[0].ParentInputs[0].InputId,
+                        ParentLabel: OptionsDependency[0].ParentInputs[0].InputLabel,
                         ValueId: value
                     }
                 ]
@@ -40,11 +39,11 @@ const Step = ({stepInfo, setStep}) => {
         <>
         <div className="grid grid-cols-2 items-center">
          {stepInfo.Inputs.map((input) => (
-             <div className={input.Id === "307.12516" && yadak != 2 ? 'hidden' : 'content mt-10 me-10' } key={input.Id}>
+             <div key={input.Id} className={input.IsVisibility == Visibility && yadak != 2 ? 'hidden' : 'content mt-10 me-10' }>
                 <label for="test">{input.Label}: </label>   
-                <select name="test" className="selectbox w-full mt-4" defaultValue='' onChange={(e) => handleSelect(e.target.value, input.Id)}>
+                <select name="test" className="selectbox w-full mt-4" defaultValue='' onChange={(e) => handleSelect(e.target.value, input.OptionsDependency, input.DispalyDependency)}>
                     <option value=''>انتخاب کنید...</option>
-                    {input.Id === "307.12083" ? (
+                    {input.Options.length === 0 ? (
                     (year && year.map((y) => (
                       <option key={y.key} value={y.Key}>{y.Value}</option>
                      )))
